@@ -1,0 +1,1 @@
+-- create company database and employees table that contains all info for employee

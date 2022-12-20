@@ -1,0 +1,390 @@
+# Advanced SQL: introduction to MS SQL Server
+
+## Introduction
+
+This is a repository for the Advanced SQL course
+
+## What is SQL?
+- SQL stands for Structured Query Language
+- SQL is used to communicate with a database
+- SQL is an ANSI (American National Standards Institute) standard
+- SQL is the most popular database language today
+- SQL is a standard language for accessing and manipulating databases
+
+# What can SQL do?
+- SQL can execute queries against a database
+- SQL can retrieve data from a database
+- SQL can insert records in a database
+- SQL can update records in a database
+- SQL can delete records from a database
+- SQL can create new databases
+- SQL can create new tables in a database
+- SQL can create stored procedures in a database
+- SQL can create views in a database
+- SQL can set permissions on tables, procedures, and views
+- SQL can create indexes on tables
+- SQL can create triggers on tables
+- SQL can create user-defined functions in a database
+- SQL can create user-defined aggregate functions in a database
+- SQL can create user-defined data types in a database
+
+# what is database mining?
+- Database mining is the process of discovering patterns in large databases.
+- Database mining is also known as knowledge discovery in databases (KDD).
+- Database mining is the process of analyzing data from different perspectives and summarizing it into useful information - information that can be used to increase revenue, cuts costs, or both.
+- Database mining is used by companies that want to market new products to their existing customers or by companies that want to attract new customers.
+- Database mining is also used to determine which customers are likely to respond to a particular marketing campaign.
+
+# Databse Objects
+- Tables: A table is a collection of related data entries and it consists of columns and rows.
+- Views: A view is a virtual table based on the result-set of an SQL statement.
+- Indexes: An index is a way to quickly locate data in a database.
+- Triggers: A trigger is a set of SQL statements that are automatically executed when a specified event occurs in a database.
+- Procedures: A procedure is a set of SQL statements that are stored in the database and can be executed by using a procedure name.
+- Functions: A function is a set of SQL statements that are stored in the database and can be executed by using a function name.
+- Cursors: A cursor is a database object that enables you to traverse the rows of a result-set one row at a time.
+- Constraints: A constraint is a rule that is enforced on a column or a table.
+- Rules: Specify acceptable values that can be entered into a table.
+- Synonyms: A synonym is an alternative name for a database object.
+- Packages: A package is a collection of database objects that can be stored in the database and reused in other packages or applications.
+- Database Links: A database link is a connection to another database.
+- Sequences: A sequence is a database object that generates a series of numbers.
+- Types: A type is a collection of attributes that define the structure of a table.
+- Domains: A domain is a collection of values that define the structure of a column.
+- Operators: An operator is a symbol that tells the database how to perform a calculation.
+- Expressions: An expression is a combination of one or more values, operators, and SQL functions that results in a value.
+- Clusters: A cluster is a group of database objects that are stored together on disk.
+# Authentication Methods
+- Windows Authentication: Windows Authentication is a method of authentication that uses the Windows operating system to verify the identity of a user.
+# Create a Data Model From gathered Requirements:
+- Identify the entities
+- Identify the relationships
+- Identify the attributes of each entity
+- Identify the primary key of each entity
+- Identify the foreign key of each entity
+- some concepts: 
+1 - Entity: An entity is a person, place, object, or event about which data is stored.
+2 - Attribute: An attribute is a characteristic of an entity.
+3 - Relationship: A relationship is a connection between two or more entities.
+4 - Primary Key: A primary key is a column or a combination of columns that uniquely identifies each row in a table.
+5 - Foreign Key: A foreign key is a column or a combination of columns that uniquely identifies a row/record in another table.
+- some rules:
+1 - Each entity must have a primary key.
+2 - Each entity must have at least one attribute.
+
+- Attributes can be:
+1 - Single-valued: A single-valued attribute can have only one value for each entity.
+2 - Multi-valued: A multi-valued attribute can have more than one value for each entity.
+3 - Derived: A derived attribute is a value that is calculated from other values.
+4 - Composite: A composite attribute is an attribute that is made up of other attributes.
+5 - Derived and Composite: A derived and composite attribute is an attribute that is calculated from other attributes.
+6 - Identifiers: An identifier is a unique value that identifies an entity.
+
+# 1NF: stands for First Normal Form
+- Rows contain data attributes of the relation
+- Cells of the table hold a single value (no arrays)
+- Column are attributes of the relation
+- All entries in a column are of the same domain (physical and logical)
+- Each attribute has a unique name
+- No two tuples may be identical (must have a valid primary key)
+- No repeating groups - more than one attribute from same physical and logical domain (ex. author1 author2, etc.)
+
+# Crow's Foot Notation
+- Crow's Foot Notation is a notation used to represent the relationships between tables in a database.
+- Crow's Foot Notation is also known as Chen's Notation.
+- Crow's Foot Notation is used to represent the relationships between tables in a database.
+
+# Golden rules in database
+- The database should be normalized to the highest possible level.
+- The database should be designed to be as flexible as possible.
+- The database should be designed to be as easy to use as possible.
+
+# The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
+- The ALTER TABLE statement is also used to add and drop various constraints on an existing table.
+- The ALTER TABLE statement is also used to add and drop various objects on an existing table.
+
+# Normalization DB with 2NF
+- 2NF: stands for Second Normal Form
+- 2NF: is a normal form used to normalize a database table.
+
+# Why Normalization?
+- Normalization is a database design technique that reduces data redundancy and improves data integrity.
+- Normalization is a process used to organize a database into tables and columns.
+- Redundancy: infromation repeated in multiple locations
+- Update: failure to change all instances of a specific value.
+- Delete: delete data ane lose other values as side effect
+- Insert [
+    - need to add data about multiple themes into a relation
+    - adding rows may force users to add infromation about another theme
+]
+# Functional Dependencies
+- Functional Dependencies: is a relationship between two sets of attributes where changing the value of one set of attributes determines the value of the other set of attributes.
+- A set of attributes can form a functional dependency: A,B,C → D, A,B,C → D does not mean A → D, BD, and C → D
+- All three attributes are needed to determine the value of D
+- A,B,C → D is a functional dependency
+
+# Second Normal Form (2NF)
+- A relation is in second normal form
+  - if it is in first normal form and all of its non-key attributes are dependent on
+the entire primary key
+    example: book(ISBN,name,date_publish) ISBN->name,date_publish)
+
+- Non-key attribute: attribute that is not part of the primary key
+- A relation is in second normal form if it is in first normal form and all of its non-key attributes are dependent on the entire primary key.
+- Dependent: Attributes appearing on the right side of a functional dependency
+- Independent: Attributes appearing on the left side of a functional dependency
+- Violation: partial dependency - when you have a non-key attribute that is dependent on only part of a composite pk (primary key)
+
+```sql
+-- book(ISBN, name,date_publish,authorname, address)
+-- ISBN, authorname>name,date_publish,address)
+-- authorname>address
+CREATE TABLE books (
+    ISBN VARCHAR(20) NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    date_publish DATE NOT NULL,
+    authorname VARCHAR(50) NOT NULL,
+    PRIMARY KEY (ISBN)
+);
+
+CREATE TABLE authors (
+    authorname VARCHAR(50) NOT NULL,
+    address VARCHAR(50) NOT NULL,
+    PRIMARY KEY (authorname)
+);
+
+INSERT INTO books VALUES ('1234567890', 'The C Programming Language', '1978-02-22', 'Dennis Ritchie');
+INSERT INTO books VALUES ('1234567891', 'The C++ Programming Language', '1985-10-15', 'Bjarne Stroustrup');
+INSERT INTO books VALUES ('1234567892', 'The Java Programming Language', '1995-05-23', 'James Gosling');
+INSERT INTO books VALUES ('1234567893', 'The Python Programming Language', '1991-02-20', 'Guido van Rossum');
+
+INSERT INTO authors VALUES ('Dennis Ritchie', 'USA');
+INSERT INTO authors VALUES ('Bjarne Stroustrup', 'Denmark');
+INSERT INTO authors VALUES ('James Gosling', 'Canada');
+INSERT INTO authors VALUES ('Guido van Rossum', 'Netherlands');
+```
+
+# Third Normal Form (3NF)
+- A relation is in third normal form
+  - if it in 2NF and is free from transitive dependencies
+- Transitive Dependency Format:
+  - AttributeA → AttributeB
+     - Attribute B → AttributeC
+- Violation: The 2nd half of a Transitive Dependency: a non-key attribute is functionally dependent on another non-key attribute
+  - AttributeB → AttributeC
+
+# Example- STEP 1 MOVE ATTRI TO NEW RELATION AND GIVE IT NAME
+
+```sql
+-- employee(id, name, age,companyname, address,city)
+-- id, comapnyname->name,age,address, city
+-- companyname->address,city
+CREATE TABLE company (
+    companyname VARCHAR(50) NOT NULL,
+    address VARCHAR(50) NOT NULL,
+    city VARCHAR(50) NOT NULL,
+    PRIMARY KEY (companyname)
+);
+
+CREATE TABLE employee (
+    id INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    age INT NOT NULL,
+    companyname VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO company VALUES ('Google', '1600 Amphitheatre Parkway', 'Mountain View');
+INSERT INTO company VALUES ('Microsoft', 'One Microsoft Way', 'Redmond');
+INSERT INTO company VALUES ('Apple', '1 Infinite Loop', 'Cupertino');
+
+INSERT INTO employee VALUES (1, 'John', 30, 'Google');
+INSERT INTO employee VALUES (2, 'Mary', 25, 'Microsoft');
+INSERT INTO employee VALUES (3, 'Steve', 40, 'Apple');
+INSERT INTO employee VALUES (4, 'Bill', 35, 'Microsoft');
+INSERT INTO employee VALUES (5, 'Ram', 45, 'Google');
+INSERT INTO employee VALUES (6, 'Ron', 50, 'Apple');
+```
+# DML "AS" ,"LIMIT" ,"TOP" 
+- AS: is a SQL clause that allows you to rename a column or table using an alias.
+- LIMIT: is a clause that lets you specify the maximum number of rows the query will return.
+- TOP: is a Transact-SQL clause that restricts the number of rows returned by a SELECT statement.
+
+# Example
+```sql
+    SELECT name AS 'Employee Name', age AS 'Employee Age' FROM employee;
+    SELECT name AS 'Employee Name', age AS 'Employee Age' FROM employee LIMIT 3;
+    SELECT TOP 3 name AS 'Employee Name', age AS 'Employee Age' FROM employee;
+    SELECT * FROM employee LIMIT 3;
+    SELECT TOP 3 * FROM employee;
+```
+
+# DML "AND" ,"OR" ,"NOT"
+- AND: is a logical operator that displays a record if all the conditions separated by AND are TRUE.
+- OR: is a logical operator that displays a record if any of the conditions separated by OR is TRUE.
+- NOT: is a logical operator that displays a record if the condition(s) is NOT TRUE.
+
+# Example
+```sql
+    SELECT * FROM employee WHERE age > 30 AND age < 50;
+    SELECT * FROM employee WHERE age > 30 OR age < 50;
+    SELECT * FROM employee WHERE NOT age > 30;
+```
+
+
+
+# DML "JOIN" ,"INNER JOIN" ,"LEFT JOIN" ,"RIGHT JOIN" ,"FULL JOIN"
+- JOIN: is a SQL clause that is used to combine rows from two or more tables, based on a related column between them.
+- INNER JOIN: is a SQL clause that returns all rows from multiple tables where the join condition is met.
+- LEFT JOIN: is a SQL clause that returns all rows from the left table (table1), even if there are no matches in the right table (table2).
+- RIGHT JOIN: is a SQL clause that returns all rows from the right table (table2), even if there are no matches in the left table (table1).
+- FULL JOIN: is a SQL clause that returns all rows when there is a match in either left or right table.
+
+# Example
+```sql
+    SELECT * FROM employee INNER JOIN company ON employee.companyname = company.companyname;
+    SELECT * FROM employee LEFT JOIN company ON employee.companyname = company.companyname;
+    SELECT * FROM employee RIGHT JOIN company ON employee.companyname = company.companyname;
+    SELECT * FROM employee FULL JOIN company ON employee.companyname = company.companyname;
+```
+
+# DML "BETWEEN" ,"LIKE" ,"IN"
+- BETWEEN: is a SQL operator that selects values within a given range.
+- LIKE: is a SQL operator that is used to search for a specific pattern in a column.
+- IN: is a SQL operator that allows you to specify multiple values in a WHERE clause.
+
+# Example
+```sql
+    SELECT * FROM employee WHERE age BETWEEN 30 AND 50;
+    SELECT * FROM employee WHERE name LIKE 'J%';
+    SELECT * FROM employee WHERE name IN ('John', 'Mary');
+```
+
+# DML "HAVING" ,"WHERE" ,"GROUP BY"
+- HAVING: is a SQL clause that was added to SQL because the WHERE keyword could not be used with aggregate functions.
+- WHERE: is a SQL clause that is used to filter records.
+- GROUP BY: is a clause in SQL that is only used with aggregate functions to group the result-set by one or more columns.
+
+# Example
+```sql
+    SELECT companyname, COUNT(*) AS 'Number of Employees' FROM employee GROUP BY companyname HAVING COUNT(*) > 1;
+    SELECT companyname, COUNT(*) AS 'Number of Employees' FROM employee GROUP BY companyname WHERE COUNT(*) > 1;
+```
+
+# DML "ORDER BY" ,"DISTINCT" ,"UNION"
+- ORDER BY: is a clause in SQL that is used to sort the data in ascending or descending order in the result-set.
+- DISTINCT: is a clause in SQL that is used to return only distinct (different) values.
+- UNION: is a SQL clause that is used to combine the result-set of two or more SELECT statements.
+
+# Example
+```sql
+    SELECT DISTINCT city FROM company ORDER BY city;
+    SELECT DISTINCT city FROM company ORDER BY city DESC;
+    SELECT name FROM employee UNION SELECT companyname FROM company;
+```
+
+# DML "INTERSECT" ,"EXCEPT"
+- INTERSECT: is a SQL clause that is used to return only the common records that exist in two or more SELECT statements.
+- EXCEPT: is a SQL clause that is used to return only the records that are not common in two or more SELECT statements.
+
+# Example
+```sql
+    SELECT name FROM employee INTERSECT SELECT companyname FROM company;
+    SELECT name FROM employee EXCEPT SELECT companyname FROM company;
+```
+
+# DML "INSERT INTO SELECT" ,"INSERT INTO VALUES"
+- INSERT INTO SELECT: is a SQL statement that is used to insert data into a table from another table.   
+- INSERT INTO VALUES: is a SQL statement that is used to insert data into a table.
+
+# Example
+```sql
+    INSERT INTO employee (name, age, companyname) SELECT name, age, companyname FROM company;
+    INSERT INTO employee (name, age, companyname) VALUES ('John', 30, 'Apple');
+```
+
+# DML "UPDATE" ,"DELETE"
+- UPDATE: is a SQL statement that is used to update existing records in a table.
+- DELETE: is a SQL statement that is used to delete records from a database table.
+
+# Example
+```sql
+    UPDATE employee SET age = 40 WHERE name = 'John';
+    DELETE FROM employee WHERE name = 'John';
+```
+
+# DML "CREATE TABLE" ,"ALTER TABLE" ,"DROP TABLE"
+- CREATE TABLE: is a SQL statement that is used to create a new table in a database.
+- ALTER TABLE: is a SQL statement that is used to add, delete, or modify columns in an existing table.
+- DROP TABLE: is a SQL statement that is used to delete an entire table from the database.
+
+
+
+
+
+# DML "CREATE INDEX" ,"DROP INDEX"
+- CREATE INDEX: is a SQL statement that is used to create an index (search key) on a table.
+- DROP INDEX: is a SQL statement that is used to delete an index.
+
+# DML "CREATE VIEW" ,"DROP VIEW"
+- CREATE VIEW: is a SQL statement that is used to create a virtual table based on the result-set of an SQL statement.
+- DROP VIEW: is a SQL statement that is used to delete a view.
+
+# DML "CREATE DATABASE" ,"ALTER DATABASE" ,"DROP DATABASE"
+- CREATE DATABASE: is a SQL statement that is used to create a new database in SQL Server.
+- ALTER DATABASE: is a SQL statement that is used to add or remove files from a database.
+- DROP DATABASE: is a SQL statement that is used to delete an entire database.
+
+# DML "CREATE PROCEDURE" ,"ALTER PROCEDURE" ,"DROP PROCEDURE"
+- CREATE PROCEDURE: is a SQL statement that is used to create a stored procedure in SQL Server.
+- ALTER PROCEDURE: is a SQL statement that is used to modify an existing stored procedure.
+- DROP PROCEDURE: is a SQL statement that is used to delete a stored procedure.
+
+# DML "CREATE FUNCTION" ,"ALTER FUNCTION" ,"DROP FUNCTION"
+- CREATE FUNCTION: is a SQL statement that is used to create a user-defined function in SQL Server.
+- ALTER FUNCTION: is a SQL statement that is used to modify an existing user-defined function.
+- DROP FUNCTION: is a SQL statement that is used to delete a user-defined function.
+
+# DML "CREATE TRIGGER" ,"ALTER TRIGGER" ,"DROP TRIGGER"
+- CREATE TRIGGER: is a SQL statement that is used to create a trigger in SQL Server, what is trigger? A trigger is a special type of stored procedure that is automatically executed when an event occurs in the database.
+- ALTER TRIGGER: is a SQL statement that is used to modify an existing trigger.
+- DROP TRIGGER: is a SQL statement that is used to delete a trigger.
+
+# DML "CREATE SCHEMA" ,"ALTER SCHEMA" ,"DROP SCHEMA"
+- CREATE SCHEMA: is a SQL statement that is used to create a new schema in SQL Server, What is Schema? A schema is a logical container for objects in a database.
+- ALTER SCHEMA: is a SQL statement that is used to modify an existing schema.
+- DROP SCHEMA: is a SQL statement that is used to delete a schema.
+
+# DML "CREATE ROLE" ,"ALTER ROLE" ,"DROP ROLE"
+- CREATE ROLE: is a SQL statement that is used to create a new role in SQL Server, What is Role? A role is a collection of users and permissions.
+- ALTER ROLE: is a SQL statement that is used to modify an existing role.
+- DROP ROLE: is a SQL statement that is used to delete a role.
+
+# DML "CREATE USER" ,"ALTER USER" ,"DROP USER"
+- CREATE USER: is a SQL statement that is used to create a new user in SQL Server, What is User? A user is a person who uses the database.
+- ALTER USER: is a SQL statement that is used to modify an existing user.
+- DROP USER: is a SQL statement that is used to delete a user.
+
+# DML "Count()",  AVG(), SUM() 
+- Count(): is a SQL aggregate function that is used to return the number of rows in a specified column.
+- AVG(): is a SQL aggregate function that is used to return the average value of a numeric column.
+- SUM(): is a SQL aggregate function that is used to return the sum of all the values in a numeric column.
+
+# DML "MIN()", MAX(), ROUND()
+- MIN(): is a SQL aggregate function that is used to return the smallest value of the selected column.
+- MAX(): is a SQL aggregate function that is used to return the largest value of the selected column.
+- ROUND(): is a SQL function that is used to round a numeric value to a specified number of decimal places.
+
+# DML "LOWER()", UPPER(), LEN()
+- LOWER(): is a SQL function that is used to convert a string to lowercase.
+- UPPER(): is a SQL function that is used to convert a string to uppercase.
+- LEN(): is a SQL function that is used to return the length of a string.
+
+
+
+
+
+
+
+
+
