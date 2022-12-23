@@ -163,19 +163,14 @@ insert into employees(name,phone,salary,state) values('john','1234567890',1000,'
 
 
 
-insert into orders(customer_id,employee_id,order_date) 
-values(1,1,'2019-01-01'),
-(2,2,'2019-01-02'),
-(3,3,'2019-01-03'),
-(4,4,'2019-01-04'),
-(5,5,'2019-01-05'),
-(1,2,'2019-01-06'),
-(2,3,'2019-01-07');
-
--- using union
-select name,phone,state from customers
-union
-select name,phone,state from employees;
+-- insert into orders(customer_id,employee_id,order_date) 
+-- values(1,1,'2019-01-01'),
+-- (2,2,'2019-01-02'),
+-- (3,3,'2019-01-03'),
+-- (4,4,'2019-01-04'),
+-- (5,5,'2019-01-05'),
+-- (1,2,'2019-01-06'),
+-- (2,3,'2019-01-07');
 
 
 

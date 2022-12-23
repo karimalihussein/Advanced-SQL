@@ -173,9 +173,6 @@ values(1,1,'2019-01-01'),
 (2,3,'2019-01-07');
 
 -- using union
-select name,phone,state from customers
-union
-select name,phone,state from employees;
 
 
 

@@ -124,7 +124,6 @@ create table employees(
     name varchar(30) not null,
     phone varchar(20) not null,
     salary int not null check(salary>100),
-    state varchar(30) not null,
     primary key(id)
 );
 
@@ -146,42 +145,26 @@ create table orders(
     foreign key(employee_id) references employees(id)
 );
 
+insert into employees(name,phone,salary) values('John','1234567890',1000);
+insert into employees(name,phone,salary) values('Mary','1234567891',2000);
+insert into employees(name,phone,salary) values('Steve','1234567892',3000);
+insert into employees(name,phone,salary) values('Bill','1234567893',4000);
+insert into employees(name,phone,salary) values('Ram','1234567894',5000);
+insert into employees(name,phone,salary) values('Ron','1234567895',6000);
 
+insert into customers(name,phone,state) values('bob','1234567890','CA');
+insert into customers(name,phone,state) values('alice','1234567891','NY');
+insert into customers(name,phone,state) values('jim','1234567892','TX');
+insert into customers(name,phone,state) values('jane','1234567893','CA');
+insert into customers(name,phone,state) values('joe','1234567894','NY');
 
-insert into customers(name,phone,state) values('bob','1234567890','CA'),
-('alice','1234567891','NY'),
-('jim','1234567892','TX'),
-('jane','1234567893','CA'),
-('joe','1234567894','NY');
-
-insert into employees(name,phone,salary,state) values('john','1234567890',1000,'CA'),
-('mary','1234567891',2000,'NY'),
-('peter','1234567892',3000,'TX'),
-('paul','1234567893',4000,'CA'),
-('lisa','1234567894',5000,'NY');
-
-
-
-
-insert into orders(customer_id,employee_id,order_date) 
-values(1,1,'2019-01-01'),
-(2,2,'2019-01-02'),
-(3,3,'2019-01-03'),
-(4,4,'2019-01-04'),
-(5,5,'2019-01-05'),
-(1,2,'2019-01-06'),
-(2,3,'2019-01-07');
-
--- using union
-select name,phone,state from customers
-union
-select name,phone,state from employees;
-
-
-
-
-
-
+insert into orders(customer_id,employee_id,order_date) values(1,1,'2019-01-01');
+insert into orders(customer_id,employee_id,order_date) values(2,2,'2019-01-02');
+insert into orders(customer_id,employee_id,order_date) values(3,3,'2019-01-03');
+insert into orders(customer_id,employee_id,order_date) values(4,4,'2019-01-04');
+insert into orders(customer_id,employee_id,order_date) values(5,5,'2019-01-05');
+insert into orders(customer_id,employee_id,order_date) values(1,2,'2019-01-06');
+insert into orders(customer_id,employee_id,order_date) values(2,3,'2019-01-07');
 
 
 

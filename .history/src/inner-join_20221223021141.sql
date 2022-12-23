@@ -146,7 +146,13 @@ create table orders(
     foreign key(employee_id) references employees(id)
 );
 
-
+insert into employees(name,phone,salary)  values 
+('John','1234567890',1000, 'TX'),
+('Mary','1234567891',2000, 'NY'),
+('Steve','1234567892',3000, 'NW'),
+('Bill','1234567893',4000, 'CA'),
+('Ram','1234567894',5000, 'TX'),
+('Ron','1234567895',6000, 'TX');
 
 insert into customers(name,phone,state) values('bob','1234567890','CA'),
 ('alice','1234567891','NY'),
@@ -154,30 +160,14 @@ insert into customers(name,phone,state) values('bob','1234567890','CA'),
 ('jane','1234567893','CA'),
 ('joe','1234567894','NY');
 
-insert into employees(name,phone,salary,state) values('john','1234567890',1000,'CA'),
-('mary','1234567891',2000,'NY'),
-('peter','1234567892',3000,'TX'),
-('paul','1234567893',4000,'CA'),
-('lisa','1234567894',5000,'NY');
 
-
-
-
-insert into orders(customer_id,employee_id,order_date) 
-values(1,1,'2019-01-01'),
+insert into orders(customer_id,employee_id,order_date) values(1,1,'2019-01-01'),
 (2,2,'2019-01-02'),
 (3,3,'2019-01-03'),
 (4,4,'2019-01-04'),
 (5,5,'2019-01-05'),
 (1,2,'2019-01-06'),
 (2,3,'2019-01-07');
-
--- using union
-select name,phone,state from customers
-union
-select name,phone,state from employees;
-
-
 
 
 
